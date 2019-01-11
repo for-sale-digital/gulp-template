@@ -1,0 +1,12 @@
+node_modules/
+
+# PhpStorm IDE
+.idea/
+
+# Eclipse IDE
+.settings/
+.buildpath
+.project
+
+# Visual Studio Code IDE
+.vscode/
