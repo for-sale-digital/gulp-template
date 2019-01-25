@@ -83,7 +83,7 @@ const compileJs = () => gulp.src(jsFiles)
     .pipe(sourcemaps.init())
     // .pipe(babel({
     //     presets: ['@babel/env'],
-    // }))    
+    // }))
     .pipe(concat(`${config.basename}.js`, { newLine: ';' }))
     .pipe(uglify())
     .pipe(rename({
