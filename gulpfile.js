@@ -21,20 +21,6 @@ const config = require('./gulpconfig');
 const pkg = require('./package.json');
 
 
-const postcssPlugins = [
-    postcssPresetEnv({
-        browsers: [
-            'ie 11',
-            'last 1 Edge versions',
-            'last 1 Chrome versions',
-            'last 1 Firefox versions',
-            'last 1 Safari versions',
-            'last 1 iOS versions',
-            'ChromeAndroid 7',
-        ],
-    }),
-];
-
 const sassFiles = `${config.dir.sources.sass}**/*.s+(a|c)ss`;
 const jsFiles = `${config.dir.sources.js}**/*.js`;
 
@@ -60,7 +46,9 @@ const lintSass = (done) => {
 const compileSass = () => gulp.src(`${config.dir.sources.sass}${config.basename}.s+(a|c)ss`)
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(postcss(postcssPlugins))
+    .pipe(postcss([
+        postcssPresetEnv(),
+    ]))
     .pipe(rename({
         suffix: '.min',
     }))
