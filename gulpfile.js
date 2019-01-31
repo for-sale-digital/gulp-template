@@ -13,7 +13,7 @@ const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
 
 const eslint = require('gulp-eslint');
-// const babel = require('gulp-babel');
+const babel = require('gulp-babel');
 const cache = require('gulp-cached');
 const uglify = require('gulp-uglify');
 
@@ -81,9 +81,9 @@ const lintJs = (done) => {
 
 const compileJs = () => gulp.src(jsFiles)
     .pipe(sourcemaps.init())
-    // .pipe(babel({
-    //     presets: ['@babel/env'],
-    // }))
+    .pipe(babel({
+        presets: ['@babel/env'],
+    }))
     .pipe(concat(`${config.basename}.js`, { newLine: ';' }))
     .pipe(uglify())
     .pipe(rename({
