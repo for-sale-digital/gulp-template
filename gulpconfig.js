@@ -1,16 +1,25 @@
 module.exports = {
-    banner: '/* <%= pkg.name %> <%= pkg.version %> */\n/* Generated on: <%= timestamp("YYYY-MM-DD HH:mm:ss") %> */\n\n',
-
-    basename: 'main',
-
-    dir: {
+    build: {
+        banner: '/* <%= pkg.name %> <%= pkg.version %> */\n/* Generated on: <%= timestamp %> */\n\n',
+        basename: 'myproject',
         sources: {
             sass: './sources/scss/',
             js: './sources/js/',
         },
-        output: {
+        targets: {
             css: './assets/css/',
             js: './assets/js/',
+        },
+    },
+
+    static: {
+        sources: {
+            css: [],
+            js: [],
+        },
+        targets: {
+            css: './assets/css/libs/',
+            js: './assets/js/libs/',
         },
     },
 };

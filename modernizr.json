@@ -1,0 +1,6 @@
+{
+    "_comment": "https://modernizr.com/download?svg-touchevents-setclasses",
+    "minify": true,
+    "options": ["setClasses"],
+    "feature-detects": ["test/svg", "test/touchevents"]
+}

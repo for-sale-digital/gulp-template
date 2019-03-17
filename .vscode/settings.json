@@ -1,0 +1,16 @@
+{
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "prettier.eslintIntegration": true,
+    "prettier.stylelintIntegration": true,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.formatOnSave": true
+    },
+    "[scss]": {
+        "editor.formatOnSave": true
+    },
+}
