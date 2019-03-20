@@ -1,5 +1,5 @@
 {
-    "extends": "stylelint-config-sass-guidelines",
+    "extends": ["stylelint-config-sass-guidelines", "./node_modules/prettier-stylelint/config.js"],
     "rules": {
         "indentation": 4,
         "max-nesting-depth": 4
