@@ -6,7 +6,7 @@ Use this template to adopt new gulp based projects. This grunt template was main
 
 -   [⚙️ Workflow](#workflow)
     -   [Branching](#branching)
-    -   [Branch-Overview](#branch-overview)
+    -   [Branch Overview](#branch-overview)
 -   [🛠 Development](#development)
     -   [**Get Started**](#get-started)
     -   [Build Commands](#build-commands)
@@ -30,12 +30,12 @@ The `develop` branch is the default branch. Whenever we decide to deploy to prod
 | Branch                                | Description                                                                                                                                                                                                                                                                                       |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `master`                              | Deployed to production.                                                                                                                                                                                                                                                                           |
-| `develop`                             | The working branch which gets deployed to staging environment (called _perf_). New features set to be launched will be merged here for a final production-readyness test.                                                                                                                         |
+| `develop`                             | The working branch which gets deployed to staging environment. New features set to be launched will be merged here for a final production-readyness test.                                                                                                                         |
 | `BRANCH_TYPE/JIRA-TICKET_description` | The BRANCH_TYPE should be one of `feature` or `hotfix` or `chore`. A feature branch for each new feature being added to the application. This branch should only temporarily exist until the changes has been launched to production. Please remove them autonomous when your PR has been merged. |
 
 ## Development
 
-We're using [NPM](https://www.npmjs.com/) as our package manager and [Prettier](https://prettier.io/), [ESLint](https://eslint.org/) _([`airbnb/javascript Style Guide`](https://github.com/airbnb/javascript) specifically)_ & [stylelint](https://stylelint.io/) to automatically format all code using [`lint-staged`](https://github.com/okonet/lint-staged). It's also recommended to have a [linter](#linting) active in your editor, to ensure common coding styleguides and speed up your own development.
+We're using [NPM](https://www.npmjs.com/) as our package manager and [Prettier](https://prettier.io/), [ESLint](https://eslint.org/) _([`airbnb/javascript`](https://github.com/airbnb/javascript) specifically)_ & [stylelint](https://stylelint.io/) to automatically format all code using [`lint-staged`](https://github.com/okonet/lint-staged). It's also recommended to have a [linter](#linting) active in your editor, to ensure common coding styleguides and speed up your own development.
 
 ### Get Started
 
