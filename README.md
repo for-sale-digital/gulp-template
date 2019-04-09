@@ -1,6 +1,8 @@
 # Gulp Template
 
-Use this template to adopt new gulp based projects. This grunt template was mainly built to compile JS and SCSS assets.
+This [gulp](https://gulpjs.com/) based template was mainly built to lint and compile JavaScript and CSS assets.
+
+Use this template to adopt new asset projects. 
 
 **Table of Contents**
 
