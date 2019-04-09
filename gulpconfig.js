@@ -3,12 +3,12 @@ module.exports = {
         banner: '/* <%= pkg.name %> <%= pkg.version %> */\n/* Generated on: <%= timestamp %> */\n\n',
         basename: 'myproject',
         sources: {
-            sass: './sources/scss/',
-            js: './sources/js/',
+            sass: './src/scss/',
+            js: './src/js/',
         },
         targets: {
-            css: './assets/css/',
-            js: './assets/js/',
+            css: './public/css/',
+            js: './public/js/',
         },
     },
 
@@ -18,8 +18,8 @@ module.exports = {
             js: [],
         },
         targets: {
-            css: './assets/css/libs/',
-            js: './assets/js/libs/',
+            css: './public/css/libs/',
+            js: './public/js/libs/',
         },
     },
 };

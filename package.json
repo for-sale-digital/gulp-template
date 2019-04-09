@@ -51,11 +51,11 @@
         }
     },
     "lint-staged": {
-        "sources/**/*.js": [
+        "src/**/*.js": [
             "eslint --fix",
             "git add"
         ],
-        "sources/**/*.s+(a|c)ss": [
+        "src/**/*.s+(a|c)ss": [
             "stylelint --fix",
             "git add"
         ]
