@@ -31,7 +31,7 @@ The `develop` branch is the default branch. Whenever we decide to deploy to prod
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `master`                              | Deployed to production.                                                                                                                                                                                                                                                                           |
 | `develop`                             | The working branch which gets deployed to staging environment. New features set to be launched will be merged here for a final production-readyness test.                                                                                                                         |
-| `BRANCH_TYPE/JIRA-TICKET_description` | The BRANCH_TYPE should be one of `feature` or `hotfix` or `chore`. A feature branch for each new feature being added to the application. This branch should only temporarily exist until the changes has been launched to production. Please remove them autonomous when your PR has been merged. |
+| `{BRANCH_TYPE}/{JIRA_TICKET_ID}-{SHORT_DESCRIPTION}` | The BRANCH_TYPE should be one of `feature` or `hotfix` or `chore`. A feature branch for each new feature being added to the application. This branch should only temporarily exist until the changes has been launched to production. Please remove them autonomous when your PR has been merged. |
 
 ## Development
 
