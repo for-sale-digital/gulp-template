@@ -31,6 +31,7 @@ const sassFiles = `${config.build.sources.sass}**/*.s+(a|c)ss`;
 const jsFiles = `${config.build.sources.js}**/*.js`;
 
 const handleError = (error) => {
+    // eslint-disable-next-line no-console
     console.log(error.toString());
     if (haltOnError) {
         throw error;
