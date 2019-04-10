@@ -48,7 +48,7 @@ This is a short description of my awesome new asset project.
 
 ### Branching
 
-The `develop` branch is the default branch. Whenever we decide to deploy to production, we merge `develop` into `master`. The `master` branch is protected and we only merge code from `develop` into `master`. Developers should create `feature/` - branches to merge code into `develop`. Those branches should be named like this : `feature/JIRA-TICKET_some-comment`. It is also possible to prefix them with `hotfix/...` (for any kinds of bugs) or `chore/...` (refactorings, unit tests, update dependecies etc.)
+The `develop` branch is the default branch. Whenever we decide to deploy to production, we merge `develop` into `master`. The `master` branch is protected and we only merge code from `develop` into `master`. Developers should create `feature/` - branches to merge code into `develop`. Those branches should be named like this : `feature/JIRA_TICKET_ID-some-comment`. It is also possible to prefix them with `hotfix/...` (for any kinds of bugs) or `chore/...` (refactorings, unit tests, update dependecies etc.)
 
 ### Branch Overview
 
