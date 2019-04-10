@@ -164,5 +164,4 @@ gulp.task('compile-js:watch', watchCompileJs);
 gulp.task('build-modernizr', buildModernizr);
 gulp.task('copy-libs', gulp.parallel(copyLibsCss, copyLibsJs, 'build-modernizr'));
 gulp.task('default', gulp.series('compile-sass', 'compile-js'));
-gulp.task('watch', watch);
-gulp.task('default:watch', gulp.series('default', 'watch'));
+gulp.task('watch', gulp.series('default', watch));
