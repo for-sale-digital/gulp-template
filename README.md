@@ -12,10 +12,14 @@ Use this template to adopt new asset projects.
 2. Configure the following files (at least replace `myproject` with your real project name):
     - [`/gulpconfig.js`](/gulpconfig.js)
     - [`/package.json`](/package.json)
-    - [`/README.md`](/README.md)
-3. Proceed the [**Get Started**](#get-started) manual below
+    - [`/README.md`](/README.md) _(yes, you're already there)_
+3. Proceed with the [**Get Started**](#get-started) manual below
 4. Remove this `Gulp Template` header block right here
 5. 🎉 Happy Coding! 
+
+---
+
+✂️ **REMOVE ALL ABOVE** ✂️
 
 ---
 
