@@ -1,8 +1,27 @@
 # Gulp Template
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdc064bae9d643dfafc35a373ed7608e)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=for-sale-digital/gulp-tenplate&amp;utm_campaign=Badge_Grade)[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![conventionl-commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)
+
 This [gulp](https://gulpjs.com/) based template was mainly built to lint and compile JavaScript and CSS assets.
 
 Use this template to adopt new asset projects. 
+
+## Get Started Before Getting Started
+
+1. Clone this repository
+2. Configure the following files (at least replace `myproject` with your real project name):
+    - [`/gulpconfig.js`](/gulpconfig.js)
+    - [`/package.json`](/package.json)
+    - [`/README.md`](/README.md)
+3. Proceed the [**Get Started**](#get-started) manual below
+4. Remove this `Gulp Template` header block right here
+5. 🎉 Happy Coding! 
+
+---
+
+# MyProject
+
+This is a short description of my awesome new asset project.
 
 **Table of Contents**
 
