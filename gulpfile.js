@@ -16,9 +16,6 @@ const babel = require('gulp-babel');
 const cache = require('gulp-cached');
 const uglify = require('gulp-uglify');
 
-const modernizr = require('gulp-modernizr');
-const modernizrConfig = require('./modernizr.json');
-
 const config = require('./gulpconfig');
 const pkg = require('./package.json');
 
@@ -52,7 +49,7 @@ const lintSass = (done) => {
 };
 
 const compileSass = (done) => {
-    gulp.src(`${config.build.sources.sass}*.s+(a|c)ss`)
+    gulp.src(sassFiles)
         .pipe(sourcemaps.init())
         .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(postcss([postcssPresetEnv()]))
@@ -90,7 +87,7 @@ const lintJs = (done) => {
 };
 
 const compileJs = (done) => {
-    gulp.src(['./node_modules/@babel/polyfill/dist/polyfill.js', jsFiles])
+    gulp.src(jsFiles)
         .pipe(sourcemaps.init())
         .pipe(
             babel({
@@ -147,21 +144,12 @@ const copyLibsJs = (done) => {
     done();
 };
 
-const buildModernizr = (done) => {
-    gulp.src([jsFiles, sassFiles])
-        .pipe(modernizr('modernizr-custom.min.js', modernizrConfig))
-        .pipe(uglify())
-        .pipe(gulp.dest(config.static.targets.js));
-    done();
-};
-
 gulp.task('lint-sass', lintSass);
 gulp.task('compile-sass', gulp.series('lint-sass', compileSass));
 gulp.task('compile-sass:watch', watchCompileSass);
 gulp.task('lint-js', lintJs);
 gulp.task('compile-js', gulp.series('lint-js', compileJs));
 gulp.task('compile-js:watch', watchCompileJs);
-gulp.task('build-modernizr', buildModernizr);
-gulp.task('copy-libs', gulp.parallel(copyLibsCss, copyLibsJs, 'build-modernizr'));
+gulp.task('copy-libs', gulp.parallel(copyLibsCss, copyLibsJs));
 gulp.task('default', gulp.series('compile-sass', 'compile-js'));
 gulp.task('watch', gulp.series('default', watch));
