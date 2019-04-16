@@ -1,6 +1,6 @@
 # Gulp Template
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdc064bae9d643dfafc35a373ed7608e)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=for-sale-digital/gulp-tenplate&amp;utm_campaign=Badge_Grade)[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![conventionl-commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdc064bae9d643dfafc35a373ed7608e)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=for-sale-digital/frontend-boilerplate&amp;utm_campaign=Badge_Grade)[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![conventionl-commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)
 
 This [gulp](https://gulpjs.com/) based template was mainly built to lint and compile JavaScript and CSS assets.
 
