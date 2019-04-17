@@ -8,6 +8,10 @@ const isAnalyze = typeof process.env.BUNDLE_ANALYZE !== 'undefined';
 
 const isProduction = mode === 'production';
 
+const jsRegEx = /\.js$/;
+const scssRegEx = /\.scss$/;
+const excludeRegEx = /node_modules/;
+
 const entry = ['./src/js/app.js', './src/scss/app.scss'];
 
 const output = {
@@ -18,8 +22,14 @@ const output = {
 const modules = {
     rules: [
         {
-            test: /\.js$/,
-            exclude: /(node_modules)/,
+            enforce: 'pre',
+            test: jsRegEx,
+            exclude: excludeRegEx,
+            loader: 'eslint-loader',
+        },
+        {
+            test: jsRegEx,
+            exclude: excludeRegEx,
             use: {
                 loader: 'babel-loader',
                 options: {
@@ -28,8 +38,8 @@ const modules = {
             },
         },
         {
-            test: /\.scss$/,
-            exclude: /node_modules/,
+            test: scssRegEx,
+            exclude: excludeRegEx,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
                 use: ['css-loader', 'postcss-loader', 'fast-sass-loader'],

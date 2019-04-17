@@ -16,6 +16,7 @@
         "css-loader": "^2.1.1",
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-loader": "^2.1.2",
         "eslint-plugin-import": "^2.17.1",
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "fast-sass-loader": "^1.4.7",
@@ -25,8 +26,8 @@
         "postcss-loader": "^3.0.0",
         "postcss-preset-env": "^6.6.0",
         "style-loader": "^0.23.1",
-        "stylelint": "^9.10.1",
         "stylelint-config-sass-guidelines": "^5.4.0",
+        "stylelint-scss": "^3.6.0",
         "webpack": "^4.30.0",
         "webpack-bundle-analyzer": "^3.3.2",
         "webpack-cli": "^3.3.0"
@@ -53,7 +54,7 @@
             "git add"
         ],
         "src/**/*.scss": [
-            "stylelint --fix",
+            "stylelint-scss --fix",
             "git add"
         ]
     },
