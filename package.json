@@ -28,12 +28,15 @@
         "stylelint": "^9.10.1",
         "stylelint-config-sass-guidelines": "^5.4.0",
         "webpack": "^4.30.0",
+        "webpack-bundle-analyzer": "^3.3.2",
         "webpack-cli": "^3.3.0"
     },
     "scripts": {
-        "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-        "build:production": "webpack --config webpack.config.js",
-        "watch": "cross-env NODE_ENV=development webpack --watch --config webpack.config.js"
+        "build:dev": "cross-env NODE_ENV=development webpack --progress",
+        "build:production": "webpack --progress --hide-modules -p",
+        "watch": "cross-env NODE_ENV=development webpack --progress --watch",
+        "analyze:dev": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress",
+        "analyze:production": "cross-env BUNDLE_ANALYZE=true webpack --progress --hide-modules -p"
     },
     "husky": {
         "hooks": {
