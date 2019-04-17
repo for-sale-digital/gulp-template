@@ -38,25 +38,27 @@ const modules = {
     ],
 };
 
-const plugins = [
-    new ExtractTextPlugin({ filename: 'bundle.css', allChunks: true }),
-
-    new OptimizeCssnanoPlugin({
-        cssnanoOptions: {
-            preset: [
-                'default',
-                {
-                    discardComments: {
-                        removeAll: true,
-                    },
-                },
-            ],
-        },
-    }),
-];
+const plugins = [new ExtractTextPlugin({ filename: 'bundle.css', allChunks: true })];
 
 if (isAnalyze) {
     plugins.push(new BundleAnalyzerPlugin());
+}
+
+if (isProduction) {
+    plugins.push(
+        new OptimizeCssnanoPlugin({
+            cssnanoOptions: {
+                preset: [
+                    'default',
+                    {
+                        discardComments: {
+                            removeAll: true,
+                        },
+                    },
+                ],
+            },
+        }),
+    );
 }
 
 module.exports = {

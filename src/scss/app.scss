@@ -2,8 +2,8 @@
 @import 'helpers/placeholders';
 @import 'helpers/mixins';
 
-.autoprefixer-test {
+body {
     @extend %bg-gradient;
     @include autoprefixer-test;
-    color: $color;
+    color: $text-color;
 }

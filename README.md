@@ -84,20 +84,24 @@ npm i
       <td>Lints and compiles all assets.</td>
     </tr>
     <tr>
-      <td><code>npm run build:production</code></td>
+      <td><code>npm run build:prod</code> OR <code>npm run prod</code></td>
       <td>Lints, compiles and minifies all assets.</td>
     </tr>
     <tr>
-      <td><code>npm run watch</code></td>
+      <td><code>npm run watch:dev</code> OR <code>npm run dev</code></td>
       <td>`build:dev` + keep watching for further changes.</td>
     </tr>
     <tr>
-      <td><code>npm run analyze:dev</code></td>
-      <td>`build:dev` + opens Bundle Analyzer View in the browser.</td>
+      <td><code>npm run watch:prod</code></td>
+      <td>`build:prod` + keep watching for further changes.</td>
     </tr>
     <tr>
-      <td><code>npm run analyze:production</code></td>
-      <td>`build:production` + opens Bundle Analyzer View in the browser.</td>
+      <td><code>npm run analyze:dev</code></td>
+      <td>`build:dev` + opens Bundle Analyzer view in the browser.</td>
+    </tr>
+    <tr>
+      <td><code>npm run analyze:prod</code></td>
+      <td>`build:prod` + opens Bundle Analyzer view in the browser.</td>
     </tr>
   </tbody>
 </table>

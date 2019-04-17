@@ -33,10 +33,13 @@
     },
     "scripts": {
         "build:dev": "cross-env NODE_ENV=development webpack --progress",
-        "build:production": "webpack --progress --hide-modules -p",
-        "watch": "cross-env NODE_ENV=development webpack --progress --watch",
+        "build:prod": "webpack --progress --hide-modules",
+        "watch:dev": "cross-env NODE_ENV=development webpack --progress --watch",
+        "watch:prod": "webpack --progress --watch",
         "analyze:dev": "cross-env NODE_ENV=development BUNDLE_ANALYZE=true webpack --progress",
-        "analyze:production": "cross-env BUNDLE_ANALYZE=true webpack --progress --hide-modules -p"
+        "analyze:prod": "cross-env BUNDLE_ANALYZE=true webpack --progress --hide-modules -p",
+        "dev": "npm run watch:dev",
+        "prod": "npm run build:prod"
     },
     "husky": {
         "hooks": {
