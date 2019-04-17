@@ -1,10 +1,8 @@
-$color: #f00;
-
-@mixin autoprefixer-test {
-    user-select: none;
-}
+@import 'helpers/variables';
+@import 'helpers/mixins';
 
 .autoprefixer-test {
     @include autoprefixer-test;
+    background-image: linear-gradient(to right, #000 0, #fff 100%);
     color: $color;
 }

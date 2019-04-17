@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin');
 
 const mode = process.env.NODE_ENV || 'production';
 
@@ -23,7 +24,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.scss$/,
+                test: /\.s+(a|c)ss$/,
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -33,5 +34,20 @@ module.exports = {
         ],
     },
 
-    plugins: [new ExtractTextPlugin({ filename: 'bundle.css' })],
+    plugins: [
+        new ExtractTextPlugin({ filename: 'bundle.css', allChunks: true }),
+
+        new OptimizeCssnanoPlugin({
+            cssnanoOptions: {
+                preset: [
+                    'default',
+                    {
+                        discardComments: {
+                            removeAll: true,
+                        },
+                    },
+                ],
+            },
+        }),
+    ],
 };
