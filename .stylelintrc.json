@@ -3,5 +3,6 @@
     "rules": {
         "indentation": 4,
         "max-nesting-depth": 4
-    }
+    },
+    "plugins": ["stylelint-scss"]
 }

@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
@@ -48,7 +49,12 @@ const modules = {
     ],
 };
 
-const plugins = [new ExtractTextPlugin({ filename: 'bundle.css', allChunks: true })];
+const plugins = [
+    new ExtractTextPlugin({ filename: 'bundle.css', allChunks: true }),
+    new StylelintPlugin({
+        syntax: 'scss',
+    }),
+];
 
 if (isAnalyze) {
     plugins.push(new BundleAnalyzerPlugin());
