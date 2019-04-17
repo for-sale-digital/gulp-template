@@ -1,8 +1,9 @@
 @import 'helpers/variables';
+@import 'helpers/placeholders';
 @import 'helpers/mixins';
 
 .autoprefixer-test {
+    @extend %bg-gradient;
     @include autoprefixer-test;
-    background-image: linear-gradient(to right, #000 0, #fff 100%);
     color: $color;
 }
