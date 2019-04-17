@@ -84,11 +84,11 @@ npm i
       <td>Lints and compiles all assets.</td>
     </tr>
     <tr>
-      <td><code>npm run build:prod</code> OR <code>npm run prod</code></td>
+      <td><code>npm run build:prod</code> <strong>or shorthand:</strong> <code>npm run prod</code></td>
       <td>Lints, compiles and minifies all assets.</td>
     </tr>
     <tr>
-      <td><code>npm run watch:dev</code> OR <code>npm run dev</code></td>
+      <td><code>npm run watch:dev</code> <strong>or shorthand:</strong> <code>npm run dev</code></td>
       <td>`build:dev` + keep watching for further changes.</td>
     </tr>
     <tr>
