@@ -14,7 +14,7 @@ Use this template to adopt new asset projects.
     - [`/package.json`](/package.json)
     - [`/README.md`](/README.md) _(yes, you're already there)_
 3. Proceed with the [**Get Started**](#get-started) manual below
-4. Remove this `Gulp Template` header block right here
+4. Remove this `Frontend Boilerplate` header block right here
 5. 🎉 Happy Coding! 
 
 ---
