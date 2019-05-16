@@ -113,11 +113,11 @@ For committing, we are following the [Conventional Commits specification](https:
 The commit message should be structured as follows:
 
 ```
-<type>[optional scope]: <description>
+type(scope?): issue-reference description
 
-[optional body]
+body?
 
-[optional footer]
+footer?
 ```
 
 To make sure, that every commit is following the specification, `commitlint` will check your messages on commit.
