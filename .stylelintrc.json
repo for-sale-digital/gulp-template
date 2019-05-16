@@ -1,7 +1,9 @@
 {
-    "extends": ["stylelint-config-sass-guidelines", "./node_modules/prettier-stylelint/config.js"],
+    "extends": ["stylelint-config-sass-guidelines"],
+    "ignoreFiles": "vendor/**",
     "rules": {
         "indentation": 4,
         "max-nesting-depth": 4
-    }
+    },
+    "plugins": ["stylelint-scss"]
 }

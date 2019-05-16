@@ -1,0 +1,9 @@
+@import 'helpers/variables';
+@import 'helpers/placeholders';
+@import 'helpers/mixins';
+
+body {
+    @extend %bg-gradient;
+    @include autoprefixer-test;
+    color: $text-color;
+}
