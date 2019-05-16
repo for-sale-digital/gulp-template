@@ -12,9 +12,10 @@ Use this template to adopt new asset projects.
 2. Configure the following files (at least replace `myproject` with your real project name):
     - [`/package.json`](/package.json)
     - [`/README.md`](/README.md) _(yes, you're already there)_
-3. Proceed with the [**Get Started**](#get-started) manual below
-4. Remove this `Frontend Boilerplate` header block right here
-5. 🎉 Happy Coding!
+3. Enter your Jira project key with following `-` as _rules.parserPreset.parserOpts.issuePrefixes_ in [`/commitlint.config.js`](/commitlint.config.js), e. g. `DEV-` (used by commitlint to validate Jira issue ids in commit messages – you also can specify several project keys as array)
+4. Proceed with the [**Get Started**](#get-started) manual below
+5. Remove this `Frontend Boilerplate` header block right here
+6. 🎉 Happy Coding!
 
 ---
 
@@ -113,7 +114,7 @@ For committing, we are following the [Conventional Commits specification](https:
 The commit message should be structured as follows:
 
 ```
-type(scope?): issue-reference description
+type(scope): issue-reference subject
 
 body?
 
