@@ -14,9 +14,12 @@ Use this template to adopt new asset projects.
     - [`/package.json`](/package.json)
     - [`/README.md`](/README.md) _(yes, you're already there)_
 3. Enter your Jira project key with following `-` as _rules.parserPreset.parserOpts.issuePrefixes_ in [`/commitlint.config.js`](/commitlint.config.js), e. g. `DEV-` (used by commitlint to validate Jira issue ids in commit messages – you also can specify several project keys as array)
-4. Proceed with the [**Get Started**](#get-started) manual below
-5. Remove this `Frontend Boilerplate` header block right here
-6. 🎉 Happy Coding!
+4. Some optionalities:
+    - Add a [`shipitfile.js`](/shipit/shipitfile.js) to make this project [deployable](#deployment) – use a similar project as template
+    - Configure [`composer.json`](/composer.json) to apply vendor dependencies, like style-cores
+5. Proceed with the [**Get Started**](#get-started) manual below
+6. Remove this `Frontend Boilerplate` header block right here
+7. 🎉 Happy Coding!
 
 ---
 
@@ -26,22 +29,31 @@ Use this template to adopt new asset projects.
 
 # MyProject
 
-This is a short description of my awesome new asset project.
+This is a short description of an awesome new asset project.
 
 **Table of Contents**
 
+-   [🆕 **Get Started**](#get-started)
 -   [⚙️ Workflow](#workflow)
     -   [Branching](#branching)
     -   [Branch Overview](#branch-overview)
 -   [🛠 Development](#development)
-    -   [**Get Started**](#get-started)
     -   [Build Commands](#build-commands)
     -   [Commiting](#commiting)
+    -   [Deployment](#deployment)
     -   [Versioning](#versioning)
 -   [💻 User Guide](#user-guide)
--   [💅🏻 Linting](#linting)
+-   [🕵 Linting](#linting)
 
 ---
+
+## Get Started
+
+```sh
+git clone https://git.fsd.li/myproject
+cd myproject
+npm i && composer install
+```
 
 ## Workflow
 
@@ -49,27 +61,19 @@ This is a short description of my awesome new asset project.
 
 ### Branching
 
-The `develop` branch is the default branch. Whenever we decide to deploy to production, we merge `develop` into `master`. The `master` branch is protected and we only merge code from `develop` into `master`. Developers should create `feature/` - branches to merge code into `develop`. Those branches should be named like this : `feature/JIRA_TICKET_ID-some-comment`. It is also possible to prefix them with `hotfix/...` (for any kinds of bugs) or `chore/...` (refactorings, unit tests, update dependecies etc.)
+The `master` branch is the default branch. Developers should create `feature/` - branches to merge code into `master`. Those branches should be named like this : `feature/JIRA_TICKET_ID-some-comment`. It is also possible to prefix them with `hotfix/...` (for any kinds of bugs) or `chore/...` (refactorings, unit tests, update dependecies etc.). Whenever we decide to deploy those changes to any stage, we merge them into `testing` for perf or into `master` for production stage.
 
 ### Branch Overview
 
 | Branch                                               | Description                                                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `master`                                             | Deployed to production.                                                                                                                                                                                                                                                                           |
-| `develop`                                            | The working branch which gets deployed to staging environment. New features set to be launched will be merged here for a final production-readyness test.                                                                                                                                         |
+| `master`                                             | The working branch which gets deployed to production.                                                                                                                                                                                                                                             |
+| `testing`                                            | The feature merging branch which gets deployed to perf environment.                                                                                                                                                                                                                               |
 | `{BRANCH_TYPE}/{JIRA_TICKET_ID}-{SHORT_DESCRIPTION}` | The BRANCH_TYPE should be one of `feature` or `hotfix` or `chore`. A feature branch for each new feature being added to the application. This branch should only temporarily exist until the changes has been launched to production. Please remove them autonomous when your PR has been merged. |
 
 ## Development
 
 We're using [NPM](https://www.npmjs.com/) as our package manager and [Prettier](https://prettier.io/), [ESLint](https://eslint.org/) _([`airbnb/javascript`](https://github.com/airbnb/javascript) specifically)_ & [stylelint](https://stylelint.io/) to automatically format all code using [`lint-staged`](https://github.com/okonet/lint-staged). It's also recommended to have a [linter](#linting) active in your editor, to ensure common coding styleguides and speed up your own development.
-
-### Get Started
-
-```sh
-git clone https://git.fsd.li/myproject
-cd myproject
-npm i
-```
 
 ### Build Commands
 
@@ -111,6 +115,11 @@ issue-reference
 ```
 
 To make sure, that every commit is following the specification, `commitlint` will check your messages on commit.
+
+### Deployment
+
+This project can be deployed with the following [FSD Jenkins Server](https://ci.fsd.li/) job triggering the [ShipIt](https://github.com/shipitjs) deployment script in this project (`shipit/shipitfile.js`):
+[myproject_deploy-assets](https://ci.fsd.li/view/myproject_deploy-assets/)
 
 ### Versioning
 
