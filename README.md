@@ -1,10 +1,10 @@
 # Frontend Boilerplate
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdc064bae9d643dfafc35a373ed7608e)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=for-sale-digital/frontend-boilerplate&amp;utm_campaign=Badge_Grade)[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![conventionl-commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdc064bae9d643dfafc35a373ed7608e)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=for-sale-digital/frontend-boilerplate&utm_campaign=Badge_Grade)[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![conventionl-commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)
 
 This [gulp](https://gulpjs.com/) based template was mainly built to lint and compile JavaScript and CSS assets.
 
-Use this template to adopt new asset projects. 
+Use this template to adopt new asset projects.
 
 ## Get Started Before Getting Started
 
@@ -13,9 +13,10 @@ Use this template to adopt new asset projects.
     - [`/gulpconfig.js`](/gulpconfig.js)
     - [`/package.json`](/package.json)
     - [`/README.md`](/README.md) _(yes, you're already there)_
-3. Proceed with the [**Get Started**](#get-started) manual below
-4. Remove this `Frontend Boilerplate` header block right here
-5. 🎉 Happy Coding! 
+3. Enter your Jira project key with following `-` as _rules.parserPreset.parserOpts.issuePrefixes_ in [`/commitlint.config.js`](/commitlint.config.js), e. g. `DEV-` (used by commitlint to validate Jira issue ids in commit messages – you also can specify several project keys as array)
+4. Proceed with the [**Get Started**](#get-started) manual below
+5. Remove this `Frontend Boilerplate` header block right here
+6. 🎉 Happy Coding!
 
 ---
 
@@ -52,10 +53,10 @@ The `develop` branch is the default branch. Whenever we decide to deploy to prod
 
 ### Branch Overview
 
-| Branch                                | Description                                                                                                                                                                                                                                                                                       |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `master`                              | Deployed to production.                                                                                                                                                                                                                                                                           |
-| `develop`                             | The working branch which gets deployed to staging environment. New features set to be launched will be merged here for a final production-readyness test.                                                                                                                         |
+| Branch                                               | Description                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `master`                                             | Deployed to production.                                                                                                                                                                                                                                                                           |
+| `develop`                                            | The working branch which gets deployed to staging environment. New features set to be launched will be merged here for a final production-readyness test.                                                                                                                                         |
 | `{BRANCH_TYPE}/{JIRA_TICKET_ID}-{SHORT_DESCRIPTION}` | The BRANCH_TYPE should be one of `feature` or `hotfix` or `chore`. A feature branch for each new feature being added to the application. This branch should only temporarily exist until the changes has been launched to production. Please remove them autonomous when your PR has been merged. |
 
 ## Development
@@ -102,11 +103,11 @@ For committing, we are following the [Conventional Commits specification](https:
 The commit message should be structured as follows:
 
 ```
-<type>[optional scope]: <description>
+type(scope): subject
 
-[optional body]
+body?
 
-[optional footer]
+issue-reference
 ```
 
 To make sure, that every commit is following the specification, `commitlint` will check your messages on commit.
