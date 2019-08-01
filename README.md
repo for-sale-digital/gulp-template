@@ -13,7 +13,7 @@ Use this template to adopt new asset projects.
     - [`/gulpconfig.js`](/gulpconfig.js)
     - [`/package.json`](/package.json)
     - [`/README.md`](/README.md) _(yes, you're already there)_
-3. Enter your Jira project key with following `-` as _rules.parserPreset.parserOpts.issuePrefixes_ in [`/commitlint.config.js`](/commitlint.config.js), e. g. `DEV-` (used by commitlint to validate Jira issue ids in commit messages – you also can specify several project keys as array)
+3. Enter your Jira project key with following `-` as _rules.parserPreset.parserOpts.issuePrefixes_ in [`/commitlint.config.js`](/commitlint.config.js), e. g. `TECH-` (used by commitlint to validate Jira issue ids in commit messages – you also can specify several project keys as array)
 4. Some optionalities:
     - Add a [`shipitfile.js`](/shipit/shipitfile.js) to make this project [deployable](#deployment) – use a similar project as template
     - Configure [`composer.json`](/composer.json) to apply vendor dependencies, like style-cores
