@@ -1,8 +1,11 @@
 const gulp = require('gulp');
+const buffer = require('vinyl-buffer');
 const concat = require('gulp-concat');
 const date2string = require('date2string');
+const glob = require('glob');
 const header = require('gulp-header');
 const rename = require('gulp-rename');
+const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const { argv } = require('yargs');
 
@@ -12,8 +15,9 @@ const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
 
 const eslint = require('gulp-eslint');
-const babel = require('gulp-babel');
 const cache = require('gulp-cached');
+const browserify = require('browserify');
+const babelify = require('babelify');
 const uglify = require('gulp-uglify');
 
 const config = require('./gulpconfig');
@@ -49,7 +53,7 @@ const lintSass = (done) => {
 };
 
 const compileSass = (done) => {
-    gulp.src(sassFiles)
+    gulp.src(`${config.build.sources.sass}*.s+(a|c)ss`)
         .pipe(sourcemaps.init())
         .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(postcss([postcssPresetEnv()]))
@@ -87,20 +91,28 @@ const lintJs = (done) => {
 };
 
 const compileJs = (done) => {
-    gulp.src(jsFiles)
-        .pipe(sourcemaps.init())
-        .pipe(
-            babel({
+    const b = browserify({
+        entries: glob.sync(jsFiles),
+        debug: true,
+        transform: [
+            babelify.configure({
                 presets: [
                     [
                         '@babel/preset-env',
                         {
-                            useBuiltIns: 'entry',
+                            useBuiltIns: 'usage',
+                            corejs: 3,
                         },
                     ],
                 ],
             }),
-        )
+        ],
+    });
+
+    b.bundle()
+        .pipe(source(jsFiles))
+        .pipe(buffer())
+        .pipe(sourcemaps.init())
         .pipe(concat(`${config.build.basename}.js`, { newLine: ';' }))
         .pipe(uglify())
         .pipe(
@@ -152,4 +164,5 @@ gulp.task('compile-js', gulp.series('lint-js', compileJs));
 gulp.task('compile-js:watch', watchCompileJs);
 gulp.task('copy-libs', gulp.parallel(copyLibsCss, copyLibsJs));
 gulp.task('default', gulp.series('compile-sass', 'compile-js'));
-gulp.task('watch', gulp.series('default', watch));
+gulp.task('watch', watch);
+gulp.task('default:watch', gulp.series('default', 'watch'));
