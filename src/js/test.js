@@ -11,7 +11,7 @@ const a = 'foobar';
 console.log(a);
 
 fetch('test.txt', {})
-    .then((response) => {
+    .then(response => {
         console.log(`status: ${response.status}`);
         return response.text();
     })
@@ -25,10 +25,10 @@ for (const [key, value] of m) {
     console.log(key, value);
 }
 
-const p = new Promise((resolve) => {
+const p = new Promise(resolve => {
     resolve('test');
 });
-p.then((foo) => {
+p.then(foo => {
     console.log(foo);
 });
 

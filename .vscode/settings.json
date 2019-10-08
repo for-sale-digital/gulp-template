@@ -2,8 +2,8 @@
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "prettier.eslintIntegration": true,
-    "prettier.stylelintIntegration": true,
+    "prettier-eslint.eslintIntegration": true,
+    "prettier-eslint.stylelintIntegration": true,
     "[javascript]": {
         "editor.formatOnSave": true
     },
