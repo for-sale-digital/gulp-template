@@ -17,7 +17,7 @@ Use this template to adopt new asset projects.
 4. Some optionalities:
     - Add a [`shipitfile.js`](/shipit/shipitfile.js) to make this project [deployable](#deployment) – use a similar project as template
     - Configure [`composer.json`](/composer.json) to apply vendor dependencies, like style-cores
-5. Proceed with the [**Get Started**](#get-started) manual below
+5. Proceed with the [**Getting Started**](#getting-started) manual below
 6. Remove this `Frontend Boilerplate` header block right here
 7. 🎉 Happy Coding!
 
@@ -53,7 +53,7 @@ This project uses [NodeJS](https://nodejs.org/) with [npm](https://www.npmjs.com
 
 ### Global Setup
 
-_Optional:_ Install `gulp-cli` globally and you'll have access to the `gulp` command anywhere on your system. Otherwise you have to execute Gulp with via [npx](https://www.npmjs.com/package/npx) which comes by default with npm. See [Build Commands](#build-commands).
+_Optional:_ Install `gulp-cli` globally and you'll have access to the `gulp` command anywhere on your system. Otherwise you have to execute Gulp via [npx](https://www.npmjs.com/package/npx) which comes by default with npm. See [Build Commands](#build-commands).
 
 ```sh
 npm i gulp-cli -g
@@ -91,11 +91,11 @@ We're using [npm](https://www.npmjs.com/) as our package manager and [Prettier](
 
 ### Build Commands
 
-| Command (✅ [global gulp-cli](#global-setup)) | (❌ [global gulp-cli](#global-setup)) | Description                                                             |
-| --------------------------------------------- | ------------------------------------- | ----------------------------------------------------------------------- |
-| `gulp`                                        | `npx gulp`                            | Compiles and lints all assets.                                          |
-| `gulp watch`                                  | `npx gulp watch`                      | Compiles and lints all assets – and keeps watching for further changes. |
-| `gulp --production`                           | `npx gulp --production`               | Compiles all assets without linting.                                    |
+| ✅ [global gulp-cli](#global-setup) | ❌ [global gulp-cli](#global-setup) | Description                                                             |
+| ----------------------------------- | ----------------------------------- | ----------------------------------------------------------------------- |
+| `gulp`                              | `npx gulp`                          | Compiles and lints all assets.                                          |
+| `gulp watch`                        | `npx gulp watch`                    | Compiles and lints all assets – and keeps watching for further changes. |
+| `gulp --production`                 | `npx gulp --production`             | Compiles all assets without linting.                                    |
 
 ### Commiting
 
@@ -130,11 +130,12 @@ There is a [Tool](https://github.com/conventional-changelog/standard-version) to
 It will automatically determine the release type based on the commit message type.
 
 **Most important commands:**
-| Command | Description |
-| --- | --- |
-| `npm run release` | Bumps version automatically, updates files, commits these changes and creates a git tag. Follow the publish instruction afterwards. |
-| `npm run release -- --dry-run` | Allows you to see what commands would be run, without committing to git or updating files. |
-| `npm run release -- --release-as major` | If want to raise major version manually instead of automatically detecting it. |
+
+| Command                                 | Description                                                                                                                         |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run release`                       | Bumps version automatically, updates files, commits these changes and creates a git tag. Follow the publish instruction afterwards. |
+| `npm run release -- --dry-run`          | Allows you to see what commands would be run, without committing to git or updating files.                                          |
+| `npm run release -- --release-as major` | If you want to raise major version manually instead of automatically detecting it.                                                  |
 
 For more information visit [conventional-changelog/standard-version](https://github.com/conventional-changelog/standard-version).
 
