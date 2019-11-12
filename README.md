@@ -33,7 +33,7 @@ This is a short description of an awesome new asset project.
 
 **Table of Contents**
 
--   [🆕 **Get Started**](#get-started)
+-   [🆕 **Getting Started**](#getting-started)
 -   [⚙️ Workflow](#workflow)
     -   [Branching](#branching)
     -   [Branch Overview](#branch-overview)
@@ -41,17 +41,32 @@ This is a short description of an awesome new asset project.
     -   [Build Commands](#build-commands)
     -   [Commiting](#commiting)
     -   [Deployment](#deployment)
-    -   [Versioning](#versioning)
+    -   [Release](#release)
 -   [💻 User Guide](#user-guide)
 -   [🕵 Linting](#linting)
 
 ---
 
-## Get Started
+## Getting Started
+
+This project uses [NodeJS](https://nodejs.org/) with [npm](https://www.npmjs.com/). We assume in this documentation that all necessary tools are installed and that you are experienced in using them.
+
+### Global Setup
+
+Install `gulp-cli` globally and you'll have access to the `gulp` command anywhere on your system.
+
+```sh
+npm i gulp-cli -g
+```
+
+### Local Setup
+
+Checkout git repository and set up initially.
 
 ```sh
 git clone https://git.fsd.li/myproject
 cd myproject
+npm i gulp-cli -g
 npm i && composer install
 ```
 
@@ -73,7 +88,7 @@ The `master` branch is the default branch. Developers should create `feature/` -
 
 ## Development
 
-We're using [NPM](https://www.npmjs.com/) as our package manager and [Prettier](https://prettier.io/), [ESLint](https://eslint.org/) _([`airbnb/javascript`](https://github.com/airbnb/javascript) specifically)_ & [stylelint](https://stylelint.io/) to automatically format all code using [`lint-staged`](https://github.com/okonet/lint-staged). It's also recommended to have a [linter](#linting) active in your editor, to ensure common coding styleguides and speed up your own development.
+We're using [npm](https://www.npmjs.com/) as our package manager and [Prettier](https://prettier.io/), [ESLint](https://eslint.org/) _([`airbnb/javascript`](https://github.com/airbnb/javascript) specifically)_ & [stylelint](https://stylelint.io/) to automatically format all code using [`lint-staged`](https://github.com/okonet/lint-staged). It's also recommended to have a [linter](#linting) active in your editor, to ensure common coding styleguides and speed up your own development.
 
 ### Build Commands
 
@@ -121,9 +136,25 @@ To make sure, that every commit is following the specification, `commitlint` wil
 This project can be deployed with the following [FSD Jenkins Server](https://ci.fsd.li/) job triggering the [ShipIt](https://github.com/shipitjs) deployment script in this project (`shipit/shipitfile.js`):
 [myproject_deploy-assets](https://ci.fsd.li/view/myproject_deploy-assets/)
 
-### Versioning
+### Release
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/for-sale-digital/gulp-template/tags).
+There is a [Tool](https://github.com/conventional-changelog/standard-version) to automate the versioning and the changelog. It uses conventional changelog to automatically add the latest changelogs. Just type `npm run release` when you want to release after merging into `master` and it will automatically:
+
+-   bump the version in metadata files (package.json, composer.json, etc).
+-   use conventional-changelog to update CHANGELOG.md
+-   commit package.json (et al.) and CHANGELOG.md
+-   tag a new release
+
+It will automatically determine the release type based on the commit message type.
+
+**Most important commands:**
+| Command | Description |
+| --- | --- |
+| `npm run release` | Bumps version automatically, updates files, commits these changes and creates a git tag. Follow the publish instruction afterwards. |
+| `npm run release -- --dry-run` | Allows you to see what commands would be run, without committing to git or updating files. |
+| `npm run release -- --release-as major` | If want to raise major version manually instead of automatically detecting it. |
+
+For more information visit [conventional-changelog/standard-version](https://github.com/conventional-changelog/standard-version).
 
 ## User Guide
 
