@@ -53,7 +53,7 @@ This project uses [NodeJS](https://nodejs.org/) with [npm](https://www.npmjs.com
 
 ### Global Setup
 
-Install `gulp-cli` globally and you'll have access to the `gulp` command anywhere on your system.
+_Optional:_ Install `gulp-cli` globally and you'll have access to the `gulp` command anywhere on your system. Otherwise you have to execute Gulp with via [npx](https://www.npmjs.com/package/npx) which comes by default with npm. See [Build Commands](#build-commands).
 
 ```sh
 npm i gulp-cli -g
@@ -66,7 +66,6 @@ Checkout git repository and set up initially.
 ```sh
 git clone https://git.fsd.li/myproject
 cd myproject
-npm i gulp-cli -g
 npm i && composer install
 ```
 
@@ -92,28 +91,11 @@ We're using [npm](https://www.npmjs.com/) as our package manager and [Prettier](
 
 ### Build Commands
 
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>gulp</code></td>
-      <td>Compiles and lints all assets.</td>
-    </tr>
-    <tr>
-      <td><code>gulp watch</code></td>
-      <td>Compiles and lints all assets – and keeps watching for further changes.</td>
-    </tr>
-    <tr>
-      <td><code>gulp --production</code></td>
-      <td>Compiles all assets without linting.</td>
-    </tr>
-  </tbody>
-</table>
+| Command (✅ [global gulp-cli](#global-setup)) | (❌ [global gulp-cli](#global-setup)) | Description                                                             |
+| --------------------------------------------- | ------------------------------------- | ----------------------------------------------------------------------- |
+| `gulp`                                        | `npx gulp`                            | Compiles and lints all assets.                                          |
+| `gulp watch`                                  | `npx gulp watch`                      | Compiles and lints all assets – and keeps watching for further changes. |
+| `gulp --production`                           | `npx gulp --production`               | Compiles all assets without linting.                                    |
 
 ### Commiting
 
