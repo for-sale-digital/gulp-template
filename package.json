@@ -43,7 +43,7 @@
         "postcss-preset-env": "^6.7.0",
         "prettier-stylelint": "^0.4.2",
         "regenerator-runtime": "^0.13.2",
-        "standard-version": "^7.0.0",
+        "standard-version": "^8.0.1",
         "stylelint": "^10.1.0",
         "stylelint-config-prettier": "^5.2.0",
         "stylelint-config-sass-guidelines": "^5.4.0",
